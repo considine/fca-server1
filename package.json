@@ -1,0 +1,36 @@
+{
+  "name": "fca-places-server",
+  "version": "1.0.0",
+  "description": "Fotoclaimapp LLC",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/considine/email-extractor.git"
+  },
+  "keywords": [],
+  "author": "Jack Considine <jackconsidine3@gmail.com> (jackconsidine.wordpress.com)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/considine/email-extractor/issues"
+  },
+  "homepage": "https://github.com/considine/email-extractor#readme",
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "jasmine": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-mongo": "^2.0.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7",
+  }
+}
