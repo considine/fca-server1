@@ -8,8 +8,9 @@ var apiRoutes = require("./routes/api.js");
 var viewRoutes = require("./routes/views.js");
 
 
+
 var app = express();
-var mongoose = require("mongoose");
+// var mongoose = require("mongoose");
 // mongoose.Promise = global.Promise; /*See:  https://github.com/Automattic/mongoose/issues/4291 */
 // const session = require('express-session');
 // const MongoStore = require('connect-mongo')(session);
@@ -27,12 +28,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+
 app.use("/api/v1/", apiRoutes);
 
 
-app.listen(9000, function () {
-
-})
+app.listen(9000, "0.0.0.0")
 
 
 module.exports = app;
