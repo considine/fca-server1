@@ -4,6 +4,8 @@ var GoogleService = require("../lib/services/googleplaces-service");
 var GoogleApiKey = require("../config/.env/keys").GOOGLE_PLACES_API_KEY;
 var GoogleMaps = require("../config/.env/keys").GOOGLE_MAPS_API_KEY;
 
+
+var ZipLocationService = require("zipcode-location-service");
 var gs;
 var category = "car_repair";
 describe("GoogleService", function() {
@@ -11,26 +13,12 @@ describe("GoogleService", function() {
     gs = new GoogleService(GoogleApiKey, GoogleMaps);
 
   });
-  describe("#searchAutoShopsByZip()", function() {
-      it("should return a lat and longitude by zipcode", function(done) {
-
-        gs.getLatLonFromZip("60091").then((resp) => {
-          if (resp.lat && resp.lng) done();
-          else done(new Error("bad results"));
-
-        })
-        .catch((e) => {
-          done(e);
-        })
-      });
-  });
-
 
   describe("#getPlacesByZip()", function() {
-    it("should return a list of repairshops", function(done) {
-      gs.searchPlacesByZip("60091", category)
+    it("should return a list of placeids", function(done) {
+      gs.getPlaceIdsByLoc(ZipLocationService.getLocation(60091), category)
       .then((resp) => {
-
+        console.log(resp);
         done();
       })
       .catch((e) => {
@@ -41,7 +29,7 @@ describe("GoogleService", function() {
 
     it ("should return a list of placeids", function (done) {
       // done();
-      gs.getPlaceIdsByZip("60091", category).then((results) => {
+      gs.getPlacesByLocation("60091", category).then((results) => {
         done();
       }).catch((e) => done(e));
     });

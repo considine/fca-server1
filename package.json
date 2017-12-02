@@ -24,19 +24,22 @@
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
     "mocha": "^4.0.1",
-    "path": "^0.12.7",
+    "path": "^0.12.7"
   },
   "dependencies": {
     "array-unique": "^0.3.2",
     "body-parser": "^1.18.2",
     "connect-mongo": "^2.0.0",
+    "connect-timeout": "^1.9.0",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "morgan": "^1.9.0",
     "node-asyncqueue": "^1.0.0",
+    "random-item": "^1.0.0",
     "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "zipcode-location-service": "^2.0.1"
   }
 }
