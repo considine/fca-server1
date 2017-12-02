@@ -48,6 +48,17 @@ router.get("/google-places/:zip", function(req, res) {
 });
 
 
+router.get("/google-places/detail/:placeid", function(req, res) {
+  var gs = new GooglePlaces(GoogleApiKey);
+  gs.getPlaceDetailsBy(req.params.placeid)
+  .then((results) => {
+    return res.send({"success" : true, "results" : results});
+  })
+  .catch((e) => {
+    res.status(400).send({"error" : true, "message" : e.message})});
+  });
+
+
 
 
 module.exports = router;
