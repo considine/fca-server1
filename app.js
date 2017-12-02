@@ -10,6 +10,14 @@ var viewRoutes = require("./routes/views.js");
 
 
 var app = express();
+var timeout = require('connect-timeout'); //express v4
+
+app.use(timeout(120000));
+app.use(haltOnTimedout);
+
+function haltOnTimedout(req, res, next){
+  if (!req.timedout) next();
+}
 // var mongoose = require("mongoose");
 // mongoose.Promise = global.Promise; /*See:  https://github.com/Automattic/mongoose/issues/4291 */
 // const session = require('express-session');
