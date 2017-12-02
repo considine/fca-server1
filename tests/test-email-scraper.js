@@ -104,7 +104,7 @@ describe("scraper", function() {
 
   describe("#crawlLevel()", function() {
     it("should retrieve links from the homepage", function(done) {
-      var emailscraper = new Scraper("http://www.danielsautowilmette.com/");
+      var emailscraper = new Scraper("http://johnwetzel.co/");
       emailscraper.getLevels(2).then((emails) => {
         console.log(emails);
         done();
